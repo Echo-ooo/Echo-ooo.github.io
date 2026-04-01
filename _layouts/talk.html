@@ -1,0 +1,16 @@
+---
+layout: single
+---
+
+{% if page.venue %}
+<p class="talk-meta">
+  <i class="fas fa-map-marker-alt"></i> {{ page.venue }}
+  {% if page.date %} | <i class="fas fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}{% endif %}
+</p>
+{% endif %}
+
+{{ content }}
+
+{% if page.slides %}
+<p><a href="{{ page.slides }}" class="btn"><i class="fas fa-file-powerpoint"></i> Slides</a></p>
+{% endif %}

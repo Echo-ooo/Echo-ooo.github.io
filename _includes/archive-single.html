@@ -1,0 +1,18 @@
+<article class="archive-item">
+  <h2 class="archive-item-title">
+    {% if post.link %}
+      <a href="{{ post.link }}">{{ post.title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link"></i></a>
+    {% else %}
+      <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
+    {% endif %}
+  </h2>
+  {% if post.date %}
+  <p class="archive-item-date">{{ post.date | date: "%B %d, %Y" }}</p>
+  {% endif %}
+  {% if post.venue %}
+  <p class="archive-item-venue"><i class="fas fa-map-marker-alt"></i> {{ post.venue }}</p>
+  {% endif %}
+  {% if post.excerpt %}
+  <p class="archive-item-excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 200 }}</p>
+  {% endif %}
+</article>
