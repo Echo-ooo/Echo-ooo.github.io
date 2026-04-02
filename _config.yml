@@ -1,5 +1,5 @@
 # Site Settings
-title: "Ethan's Academic Page"
+title: "Ethan's Personal Page"
 name: "Ethan"
 description: "Personal academic website"
 url: "https://Echo-ooo.github.io"
@@ -10,7 +10,7 @@ repository: "Echo-ooo/Echo-ooo.github.io"
 author:
   name: "Ethan"
   avatar: "images/profile.jpg"
-  bio: "Researcher | Developer"
+  bio: "Autonomous Driving Engineer"
   location: "Your Location"
   email: "your.email@example.com"
   github: "Echo-ooo"
@@ -41,12 +41,6 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -70,18 +64,6 @@ defaults:
   - scope:
       path: ""
       type: publications
-    values:
-      layout: single
-      author_profile: true
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-  - scope:
-      path: ""
-      type: teaching
     values:
       layout: single
       author_profile: true
