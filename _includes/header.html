@@ -1,14 +1,30 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-      <ul class="nav-links">
-        {% for link in site.data.navigation.main %}
-        <li><a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.name }}</a>
+
+      <div class="nav-center">
+        <ul class="nav-links">
+          {% for item in site.data.navigation.main %}
+          <li>
+            <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>
+              <span class="lang-en">{{ item.title }}</span>
+              <span class="lang-zh" style="display:none;">{{ item.title_zh | default: item.title }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+      </div>
+
       <button class="nav-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </nav>
   </div>

@@ -5,31 +5,40 @@
   </div>
   {% endif %}
 
-  <h3 class="author-name">{{ site.author.name }}</h3>
+  <div class="author-info">
+    <h3 class="author-name">{{ site.author.name }}</h3>
 
-  {% if site.author.bio %}
-  <p class="author-bio">{{ site.author.bio }}</p>
-  {% endif %}
+    {% if site.author.bio %}
+    <p class="author-bio">
+      <span class="lang-en">{{ site.author.bio }}</span>
+      <span class="lang-zh" style="display:none;">{{ site.author.bio_zh | default: site.author.bio }}</span>
+    </p>
+    {% endif %}
 
-  {% if site.author.location %}
-  <p class="author-location"><i class="fas fa-map-marker-alt"></i> {{ site.author.location }}</p>
-  {% endif %}
+    {% if site.author.location %}
+    <p class="author-location">
+      <i class="fas fa-map-marker-alt"></i>
+      <span class="lang-en">{{ site.author.location }}</span>
+      <span class="lang-zh" style="display:none;">{{ site.author.location_zh | default: site.author.location }}</span>
+    </p>
+    {% endif %}
 
-  <div class="author-links">
-    {% if site.author.email %}
-    <a href="mailto:{{ site.author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
-    {% endif %}
-    {% if site.author.github %}
-    <a href="https://github.com/{{ site.author.github }}" title="GitHub"><i class="fab fa-github"></i></a>
-    {% endif %}
-    {% if site.author.linkedin %}
-    <a href="https://linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    {% endif %}
-    {% if site.author.googlescholar %}
-    <a href="{{ site.author.googlescholar }}" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-    {% endif %}
-    {% if site.author.orcid %}
-    <a href="https://orcid.org/{{ site.author.orcid }}" title="ORCID"><i class="fab fa-orcid"></i></a>
-    {% endif %}
+    <div class="author-links">
+      {% if site.author.email %}
+      <a href="mailto:{{ site.author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+      {% endif %}
+      {% if site.author.github %}
+      <a href="https://github.com/{{ site.author.github }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+      {% endif %}
+      {% if site.author.linkedin %}
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+      {% endif %}
+      {% if site.author.googlescholar %}
+      <a href="{{ site.author.googlescholar }}" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+      {% endif %}
+      {% if site.author.orcid %}
+      <a href="https://orcid.org/{{ site.author.orcid }}" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
+      {% endif %}
+    </div>
   </div>
 </div>
