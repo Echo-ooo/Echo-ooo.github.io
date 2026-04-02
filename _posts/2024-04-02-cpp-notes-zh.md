@@ -1,7 +1,8 @@
 ---
 title: "C++ 自动驾驶开发笔记"
 date: 2024-04-02
-categories: programming
+categories:
+  - programming
 lang: zh
 slug: cpp-notes
 excerpt: "智能指针、STL容器、TensorRT推理及性能优化技术。"

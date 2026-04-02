@@ -31,35 +31,37 @@ author_profile: true
   <p class="category-desc lang-zh" style="display:none;">深入探讨3D检测、传感器融合、BEV网络及感知算法。</p>
 
   <div class="post-list">
-    {% assign en_posts = site.posts | where: "lang", "en" | where_exp: "post", "post.categories contains 'perception'" %}
-    {% assign zh_posts = site.posts | where: "lang", "zh" | where_exp: "post", "post.categories contains 'perception'" %}
-
-    {% for post in en_posts %}
+    {% assign has_en = false %}
+    {% assign has_zh = false %}
+    {% for post in site.posts %}
+      {% if post.categories contains 'perception' %}
+        {% if post.lang == 'en' %}
+          {% assign has_en = true %}
     <div class="post-item lang-en" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">perception</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
-    {% endfor %}
-
-    {% for post in zh_posts %}
+        {% elsif post.lang == 'zh' %}
+          {% assign has_zh = true %}
     <div class="post-item lang-zh" style="display:none;" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">perception</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
+        {% endif %}
+      {% endif %}
     {% endfor %}
-
-    {% if en_posts.size == 0 and zh_posts.size == 0 %}
+    {% unless has_en or has_zh %}
     <div class="no-posts lang-en">Coming soon...</div>
     <div class="no-posts lang-zh" style="display:none;">敬请期待...</div>
-    {% endif %}
+    {% endunless %}
   </div>
 </div>
 
@@ -73,35 +75,37 @@ author_profile: true
   <p class="category-desc lang-zh" style="display:none;">CUDA编程、TensorRT优化、模型量化与部署技术。</p>
 
   <div class="post-list">
-    {% assign en_posts = site.posts | where: "lang", "en" | where_exp: "post", "post.categories contains 'hpc'" %}
-    {% assign zh_posts = site.posts | where: "lang", "zh" | where_exp: "post", "post.categories contains 'hpc'" %}
-
-    {% for post in en_posts %}
+    {% assign has_en = false %}
+    {% assign has_zh = false %}
+    {% for post in site.posts %}
+      {% if post.categories contains 'hpc' %}
+        {% if post.lang == 'en' %}
+          {% assign has_en = true %}
     <div class="post-item lang-en" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">hpc</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
-    {% endfor %}
-
-    {% for post in zh_posts %}
+        {% elsif post.lang == 'zh' %}
+          {% assign has_zh = true %}
     <div class="post-item lang-zh" style="display:none;" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">hpc</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
+        {% endif %}
+      {% endif %}
     {% endfor %}
-
-    {% if en_posts.size == 0 and zh_posts.size == 0 %}
+    {% unless has_en or has_zh %}
     <div class="no-posts lang-en">Coming soon...</div>
     <div class="no-posts lang-zh" style="display:none;">敬请期待...</div>
-    {% endif %}
+    {% endunless %}
   </div>
 </div>
 
@@ -115,35 +119,37 @@ author_profile: true
   <p class="category-desc lang-zh" style="display:none;">C++、Python、Rust等语言技巧与最佳实践。</p>
 
   <div class="post-list">
-    {% assign en_posts = site.posts | where: "lang", "en" | where_exp: "post", "post.categories contains 'programming'" %}
-    {% assign zh_posts = site.posts | where: "lang", "zh" | where_exp: "post", "post.categories contains 'programming'" %}
-
-    {% for post in en_posts %}
+    {% assign has_en = false %}
+    {% assign has_zh = false %}
+    {% for post in site.posts %}
+      {% if post.categories contains 'programming' %}
+        {% if post.lang == 'en' %}
+          {% assign has_en = true %}
     <div class="post-item lang-en" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">programming</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
-    {% endfor %}
-
-    {% for post in zh_posts %}
+        {% elsif post.lang == 'zh' %}
+          {% assign has_zh = true %}
     <div class="post-item lang-zh" style="display:none;" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">programming</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
+        {% endif %}
+      {% endif %}
     {% endfor %}
-
-    {% if en_posts.size == 0 and zh_posts.size == 0 %}
+    {% unless has_en or has_zh %}
     <div class="no-posts lang-en">Coming soon...</div>
     <div class="no-posts lang-zh" style="display:none;">敬请期待...</div>
-    {% endif %}
+    {% endunless %}
   </div>
 </div>
 
@@ -157,34 +163,36 @@ author_profile: true
   <p class="category-desc lang-zh" style="display:none;">随想、读书笔记及其他。</p>
 
   <div class="post-list">
-    {% assign en_posts = site.posts | where: "lang", "en" | where_exp: "post", "post.categories contains 'misc'" %}
-    {% assign zh_posts = site.posts | where: "lang", "zh" | where_exp: "post", "post.categories contains 'misc'" %}
-
-    {% for post in en_posts %}
+    {% assign has_en = false %}
+    {% assign has_zh = false %}
+    {% for post in site.posts %}
+      {% if post.categories contains 'misc' %}
+        {% if post.lang == 'en' %}
+          {% assign has_en = true %}
     <div class="post-item lang-en" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">misc</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
-    {% endfor %}
-
-    {% for post in zh_posts %}
+        {% elsif post.lang == 'zh' %}
+          {% assign has_zh = true %}
     <div class="post-item lang-zh" style="display:none;" data-slug="{{ post.slug }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="tag">{{ post.categories | first }}</span>
+        <span class="tag">misc</span>
       </div>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
     </div>
+        {% endif %}
+      {% endif %}
     {% endfor %}
-
-    {% if en_posts.size == 0 and zh_posts.size == 0 %}
+    {% unless has_en or has_zh %}
     <div class="no-posts lang-en">Coming soon...</div>
     <div class="no-posts lang-zh" style="display:none;">敬请期待...</div>
-    {% endif %}
+    {% endunless %}
   </div>
 </div>

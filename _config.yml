@@ -43,6 +43,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
+  algorithm:
+    output: true
+    permalink: /algorithm/:path/
 
 # Defaults
 defaults:

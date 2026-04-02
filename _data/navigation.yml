@@ -5,6 +5,9 @@ main:
   - title: "Publications"
     title_zh: "发表"
     url: /publications/
+  - title: "Algorithm"
+    title_zh: "算法"
+    url: /algorithm/
   - title: "Blog"
     title_zh: "博客"
     url: /blog/

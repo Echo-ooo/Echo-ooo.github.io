@@ -1,7 +1,8 @@
 ---
 title: "C++ Notes for Autonomous Driving Development"
 date: 2024-04-02
-categories: programming
+categories:
+  - programming
 lang: en
 slug: cpp-notes
 excerpt: "Smart pointers, STL containers, TensorRT inference, and performance optimization techniques."
