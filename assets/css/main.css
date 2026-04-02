@@ -513,8 +513,8 @@ a:hover {
 }
 
 .page-body pre {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  background: #1e1e2e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   padding: var(--space-md);
   overflow-x: auto;
@@ -522,9 +522,11 @@ a:hover {
 }
 
 .page-body pre code {
-  background: none;
+  background: transparent !important;
   padding: 0;
-  color: var(--text-primary);
+  color: #cdd6f4;
+  display: block;
+  white-space: pre;
 }
 
 .page-body table {
@@ -957,6 +959,45 @@ a:hover {
   display: block;
 }
 
+/* Language switching based on html[data-lang] attribute */
+/* Default: hide Chinese, show English */
+.lang-zh {
+  display: none !important;
+}
+
+.lang-en {
+  display: revert !important;
+}
+
+/* When Chinese is selected */
+html[data-lang="zh"] .lang-zh {
+  display: revert !important;
+}
+
+html[data-lang="zh"] .lang-en {
+  display: none !important;
+}
+
+/* Post items need block display */
+html[data-lang="zh"] .post-item.lang-zh {
+  display: block !important;
+}
+
+html[data-lang="en"] .post-item.lang-en,
+html:not([data-lang]) .post-item.lang-en {
+  display: block !important;
+}
+
+/* No-posts placeholders */
+html[data-lang="zh"] .no-posts.lang-zh {
+  display: block !important;
+}
+
+html[data-lang="en"] .no-posts.lang-en,
+html:not([data-lang]) .no-posts.lang-en {
+  display: block !important;
+}
+
 /* Smooth transitions for language switching */
 .lang-fade {
   transition: opacity var(--transition-fast);
@@ -1099,7 +1140,16 @@ a:hover {
   color: var(--accent);
 }
 
-/* Partition Cards */
+/* Section Styles */
+.partition-section,
+.code-section,
+.related-section,
+.comparison-section,
+.problem-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+
 .partition-section h2,
 .code-section h2,
 .related-section h2,
@@ -1109,6 +1159,14 @@ a:hover {
   font-size: 1.6rem;
   color: var(--primary);
   margin-bottom: var(--space-lg);
+}
+
+/* Code Section Layout */
+.code-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
 }
 
 .partition-grid {
@@ -1301,10 +1359,29 @@ a:hover {
 
 .tab-content {
   display: none;
+  background: #1e1e2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+  padding: var(--space-md);
 }
 
 .tab-content.active {
   display: block;
+}
+
+/* Code blocks inside tabs - simplified borders */
+.tab-content .code-block {
+  margin-bottom: var(--space-md);
+}
+
+.tab-content .code-block:last-child {
+  margin-bottom: 0;
+}
+
+.tab-content .code-block pre {
+  border: none;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Code Blocks - Dark Theme */
@@ -1326,7 +1403,7 @@ a:hover {
 
 .code-block pre {
   margin: 0;
-  background: #1e1e2e;
+  background: #1e1e2e !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-top: none;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
@@ -1336,11 +1413,45 @@ a:hover {
   position: relative;
 }
 
-.code-block code {
+.code-block pre code {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   line-height: 1.6;
   color: #cdd6f4;
+  background: transparent !important;
+  padding: 0;
+  display: block;
+  white-space: pre;
+}
+
+/* Algorithm page specific pre/code styles */
+.algorithm-detail pre {
+  background: #1e1e2e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  overflow-x: auto;
+  margin: 0;
+}
+
+.algorithm-detail pre code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #cdd6f4;
+  background: transparent !important;
+  padding: 0;
+  display: block;
+  white-space: pre;
+}
+
+.algorithm-detail code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--accent);
 }
 
 /* Copy Button */

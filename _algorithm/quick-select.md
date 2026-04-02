@@ -11,21 +11,21 @@ tags: ["Selection", "Top-K", "LC 215", "LC 347"]
   <div class="page-header">
     <a href="/algorithm/" class="back-link">
       <span class="lang-en">← Back to Algorithm</span>
-      <span class="lang-zh" style="display: none;">← 返回算法列表</span>
+      <span class="lang-zh">← 返回算法列表</span>
     </a>
     <h1>
       <span class="lang-en">Quick Select & Top-K Problems</span>
-      <span class="lang-zh" style="display: none;">快速选择与 Top-K 问题</span>
+      <span class="lang-zh">快速选择与 Top-K 问题</span>
     </h1>
   </div>
 
   <div class="intro-section">
     <p class="lang-en">Quick Select is a selection algorithm derived from Quick Sort. Instead of recursing into both sides, it only recurses into the side containing the k-th element, achieving O(n) average time complexity.</p>
-    <p class="lang-zh" style="display: none;">快速选择是由快速排序衍生的选择算法。与快排不同，它只递归包含第 k 个元素的那一侧，从而达到平均 O(n) 的时间复杂度。</p>
+    <p class="lang-zh">快速选择是由快速排序衍生的选择算法。与快排不同，它只递归包含第 k 个元素的那一侧，从而达到平均 O(n) 的时间复杂度。</p>
 
     <div class="complexity-badge">
       <span class="lang-en">Average: O(n) | Worst: O(n²) | Space: O(1)</span>
-      <span class="lang-zh" style="display: none;">平均：O(n) | 最坏：O(n²) | 空间：O(1)</span>
+      <span class="lang-zh">平均：O(n) | 最坏：O(n²) | 空间：O(1)</span>
     </div>
   </div>
 
@@ -35,19 +35,19 @@ tags: ["Selection", "Top-K", "LC 215", "LC 347"]
         <span class="problem-number">LC 215</span>
         <a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/" target="_blank" class="leetcode-link">
           <span class="lang-en">Kth Largest Element in an Array</span>
-          <span class="lang-zh" style="display: none;">数组中的第K个最大元素</span>
+          <span class="lang-zh">数组中的第K个最大元素</span>
           <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
         </a>
       </div>
 
       <p class="problem-desc lang-en">Given an integer array nums and an integer k, return the k-th largest element in the array. Note that it is the k-th largest element in the sorted order, not the k-th distinct element.</p>
-      <p class="problem-desc lang-zh" style="display: none;">给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。</p>
+      <p class="problem-desc lang-zh">给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。</p>
 
       <div class="key-insight">
         <h4 class="lang-en">Key Insight</h4>
-        <h4 class="lang-zh" style="display: none;">关键思路</h4>
+        <h4 class="lang-zh">关键思路</h4>
         <p class="lang-en">The k-th largest = (n-k)-th smallest (0-indexed). Use Quick Select to find the element at index n-k after partitioning.</p>
-        <p class="lang-zh" style="display: none;">第 k 大 = 第 (n-k) 小（0索引）。使用快速选择找到分区后索引为 n-k 的元素。</p>
+        <p class="lang-zh">第 k 大 = 第 (n-k) 小（0索引）。使用快速选择找到分区后索引为 n-k 的元素。</p>
       </div>
 
       <div class="code-tabs">
@@ -60,7 +60,7 @@ tags: ["Selection", "Top-K", "LC 215", "LC 347"]
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Lomuto Partition (Iterative)</span>
-              <span class="lang-zh" style="display: none;">Lomuto 分区（迭代）</span>
+              <span class="lang-zh">Lomuto 分区（迭代）</span>
             </div>
 <pre><code class="language-cpp">class Solution {
 public:
@@ -98,7 +98,7 @@ private:
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Hoare Partition (Recursive)</span>
-              <span class="lang-zh" style="display: none;">Hoare 分区（递归）</span>
+              <span class="lang-zh">Hoare 分区（递归）</span>
             </div>
 <pre><code class="language-cpp">class Solution {
 public:
@@ -128,7 +128,7 @@ private:
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Hoare Partition</span>
-              <span class="lang-zh" style="display: none;">Hoare 分区</span>
+              <span class="lang-zh">Hoare 分区</span>
             </div>
 <pre><code class="language-python">class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
@@ -165,28 +165,28 @@ private:
         <span class="problem-number">LC 347</span>
         <a href="https://leetcode.cn/problems/top-k-frequent-elements/" target="_blank" class="leetcode-link">
           <span class="lang-en">Top K Frequent Elements</span>
-          <span class="lang-zh" style="display: none;">前 K 个高频元素</span>
+          <span class="lang-zh">前 K 个高频元素</span>
           <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
         </a>
       </div>
 
       <p class="problem-desc lang-en">Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order. Time complexity must be better than O(n log n).</p>
-      <p class="problem-desc lang-zh" style="display: none;">给你一个整数数组 nums 和一个整数 k，请你返回其中出现频率前 k 高的元素。你可以按任意顺序返回答案。时间复杂度必须优于 O(n log n)。</p>
+      <p class="problem-desc lang-zh">给你一个整数数组 nums 和一个整数 k，请你返回其中出现频率前 k 高的元素。你可以按任意顺序返回答案。时间复杂度必须优于 O(n log n)。</p>
 
       <div class="solution-approaches">
         <h4 class="lang-en">Two Approaches</h4>
-        <h4 class="lang-zh" style="display: none;">两种方法</h4>
+        <h4 class="lang-zh">两种方法</h4>
         <div class="approach-grid">
           <div class="approach-card">
             <h5>Quick Select</h5>
             <p class="lang-en">Find the k-th highest frequency threshold, then collect all elements with frequency ≥ threshold.</p>
-            <p class="lang-zh" style="display: none;">找到第 k 高的频率阈值，然后收集所有频率 ≥ 阈值的元素。</p>
+            <p class="lang-zh">找到第 k 高的频率阈值，然后收集所有频率 ≥ 阈值的元素。</p>
             <span class="complexity">O(n) avg</span>
           </div>
           <div class="approach-card">
             <h5>Bucket Sort</h5>
             <p class="lang-en">Use frequency as bucket index. Iterate from highest frequency bucket to collect k elements.</p>
-            <p class="lang-zh" style="display: none;">使用频率作为桶索引。从最高频率的桶开始迭代，收集 k 个元素。</p>
+            <p class="lang-zh">使用频率作为桶索引。从最高频率的桶开始迭代，收集 k 个元素。</p>
             <span class="complexity">O(n)</span>
           </div>
         </div>
@@ -202,7 +202,7 @@ private:
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Quick Select Solution</span>
-              <span class="lang-zh" style="display: none;">快速选择解法</span>
+              <span class="lang-zh">快速选择解法</span>
             </div>
 <pre><code class="language-cpp">class Solution {
 public:
@@ -242,7 +242,7 @@ private:
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Bucket Sort Solution</span>
-              <span class="lang-zh" style="display: none;">桶排序解法</span>
+              <span class="lang-zh">桶排序解法</span>
             </div>
 <pre><code class="language-cpp">class Solution {
 public:
@@ -269,7 +269,7 @@ public:
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Quick Select Solution</span>
-              <span class="lang-zh" style="display: none;">快速选择解法</span>
+              <span class="lang-zh">快速选择解法</span>
             </div>
 <pre><code class="language-python">class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
@@ -306,7 +306,7 @@ public:
           <div class="code-block">
             <div class="code-header">
               <span class="lang-en">Bucket Sort Solution</span>
-              <span class="lang-zh" style="display: none;">桶排序解法</span>
+              <span class="lang-zh">桶排序解法</span>
             </div>
 <pre><code class="language-python">class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
@@ -334,19 +334,19 @@ public:
   <div class="comparison-section">
     <h2>
       <span class="lang-en">Method Comparison</span>
-      <span class="lang-zh" style="display: none;">方法对比</span>
+      <span class="lang-zh">方法对比</span>
     </h2>
     <table class="comparison-table">
       <thead>
         <tr>
           <th class="lang-en">Method</th>
-          <th class="lang-zh" style="display: none;">方法</th>
+          <th class="lang-zh">方法</th>
           <th class="lang-en">Time</th>
-          <th class="lang-zh" style="display: none;">时间</th>
+          <th class="lang-zh">时间</th>
           <th class="lang-en">Space</th>
-          <th class="lang-zh" style="display: none;">空间</th>
+          <th class="lang-zh">空间</th>
           <th class="lang-en">Pros</th>
-          <th class="lang-zh" style="display: none;">优点</th>
+          <th class="lang-zh">优点</th>
         </tr>
       </thead>
       <tbody>
@@ -355,21 +355,21 @@ public:
           <td>O(n) avg</td>
           <td>O(1)</td>
           <td class="lang-en">In-place, good average case</td>
-          <td class="lang-zh" style="display: none;">原地操作，平均情况好</td>
+          <td class="lang-zh">原地操作，平均情况好</td>
         </tr>
         <tr>
           <td>Bucket Sort</td>
           <td>O(n)</td>
           <td>O(n)</td>
           <td class="lang-en">Guaranteed O(n), stable</td>
-          <td class="lang-zh" style="display: none;">保证 O(n)，稳定</td>
+          <td class="lang-zh">保证 O(n)，稳定</td>
         </tr>
         <tr>
           <td>Heap</td>
           <td>O(n log k)</td>
           <td>O(k)</td>
           <td class="lang-en">Good when k is small</td>
-          <td class="lang-zh" style="display: none;">k 较小时效果好</td>
+          <td class="lang-zh">k 较小时效果好</td>
         </tr>
       </tbody>
     </table>
@@ -378,13 +378,13 @@ public:
   <div class="related-section">
     <h2>
       <span class="lang-en">Related</span>
-      <span class="lang-zh" style="display: none;">相关内容</span>
+      <span class="lang-zh">相关内容</span>
     </h2>
     <div class="related-links">
       <a href="/algorithm/quick-sort/" class="related-card">
         <span class="problem-tag">Foundation</span>
         <span class="lang-en">Quick Sort</span>
-        <span class="lang-zh" style="display: none;">快速排序</span>
+        <span class="lang-zh">快速排序</span>
       </a>
     </div>
   </div>

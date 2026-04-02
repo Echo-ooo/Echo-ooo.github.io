@@ -11,28 +11,28 @@ tags: ["Sorting", "Divide & Conquer"]
   <div class="page-header">
     <a href="/algorithm/" class="back-link">
       <span class="lang-en">← Back to Algorithm</span>
-      <span class="lang-zh" style="display: none;">← 返回算法列表</span>
+      <span class="lang-zh">← 返回算法列表</span>
     </a>
     <h1>
       <span class="lang-en">Quick Sort</span>
-      <span class="lang-zh" style="display: none;">快速排序</span>
+      <span class="lang-zh">快速排序</span>
     </h1>
   </div>
 
   <div class="intro-section">
     <p class="lang-en">Quick Sort is a highly efficient, comparison-based sorting algorithm using the divide-and-conquer strategy. It works by selecting a 'pivot' element and partitioning the array around it.</p>
-    <p class="lang-zh" style="display: none;">快速排序是一种高效的基于比较的排序算法，采用分治策略。它通过选择一个"基准"元素，将数组围绕基准进行分区。</p>
+    <p class="lang-zh">快速排序是一种高效的基于比较的排序算法，采用分治策略。它通过选择一个"基准"元素，将数组围绕基准进行分区。</p>
 
     <div class="complexity-badge">
       <span class="lang-en">Average: O(n log n) | Worst: O(n²) | Space: O(log n)</span>
-      <span class="lang-zh" style="display: none;">平均：O(n log n) | 最坏：O(n²) | 空间：O(log n)</span>
+      <span class="lang-zh">平均：O(n log n) | 最坏：O(n²) | 空间：O(log n)</span>
     </div>
   </div>
 
   <div class="partition-section">
     <h2>
       <span class="lang-en">Partition Schemes</span>
-      <span class="lang-zh" style="display: none;">分区方案</span>
+      <span class="lang-zh">分区方案</span>
     </h2>
 
     <div class="partition-grid">
@@ -40,7 +40,7 @@ tags: ["Sorting", "Divide & Conquer"]
         <h3>Lomuto Partition</h3>
         <div class="partition-desc">
           <p class="lang-en">Uses a single pointer to track the boundary of elements smaller than pivot. Simple but less efficient.</p>
-          <p class="lang-zh" style="display: none;">使用单指针追踪小于基准元素的边界。简单但效率较低。</p>
+          <p class="lang-zh">使用单指针追踪小于基准元素的边界。简单但效率较低。</p>
         </div>
         <ul class="lang-en">
           <li>Single pointer traversal</li>
@@ -48,7 +48,7 @@ tags: ["Sorting", "Divide & Conquer"]
           <li>Maintains relative order</li>
           <li>Poor performance with duplicates</li>
         </ul>
-        <ul class="lang-zh" style="display: none;">
+        <ul class="lang-zh">
           <li>单指针遍历</li>
           <li>平均约 n/2 次交换</li>
           <li>保持相对顺序</li>
@@ -60,7 +60,7 @@ tags: ["Sorting", "Divide & Conquer"]
         <h3>Hoare Partition</h3>
         <div class="partition-desc">
           <p class="lang-en">Uses two pointers moving towards each other. More efficient in practice with fewer swaps.</p>
-          <p class="lang-zh" style="display: none;">使用双指针相向移动。实际中更高效，交换次数更少。</p>
+          <p class="lang-zh">使用双指针相向移动。实际中更高效，交换次数更少。</p>
         </div>
         <ul class="lang-en">
           <li>Two-pointer approach</li>
@@ -68,7 +68,7 @@ tags: ["Sorting", "Divide & Conquer"]
           <li>Better cache performance</li>
           <li>Handles duplicates well</li>
         </ul>
-        <ul class="lang-zh" style="display: none;">
+        <ul class="lang-zh">
           <li>双指针方法</li>
           <li>平均约 n/3 次交换</li>
           <li>更好的缓存性能</li>
@@ -81,7 +81,7 @@ tags: ["Sorting", "Divide & Conquer"]
   <div class="code-section">
     <h2>
       <span class="lang-en">Implementation</span>
-      <span class="lang-zh" style="display: none;">代码实现</span>
+      <span class="lang-zh">代码实现</span>
     </h2>
 
     <div class="code-tabs">
@@ -183,13 +183,13 @@ def partition(nums: List[int], left: int, right: int) -> int:
   <div class="related-section">
     <h2>
       <span class="lang-en">Related Problems</span>
-      <span class="lang-zh" style="display: none;">相关题目</span>
+      <span class="lang-zh">相关题目</span>
     </h2>
     <div class="related-links">
       <a href="/algorithm/quick-select/" class="related-card">
         <span class="problem-tag">LC 215 / LC 347</span>
         <span class="lang-en">Quick Select & Top-K</span>
-        <span class="lang-zh" style="display: none;">快速选择与 Top-K</span>
+        <span class="lang-zh">快速选择与 Top-K</span>
       </a>
     </div>
   </div>

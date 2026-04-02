@@ -11,7 +11,7 @@
     {% if site.author.bio %}
     <p class="author-bio">
       <span class="lang-en">{{ site.author.bio }}</span>
-      <span class="lang-zh" style="display:none;">{{ site.author.bio_zh | default: site.author.bio }}</span>
+      <span class="lang-zh">{{ site.author.bio_zh | default: site.author.bio }}</span>
     </p>
     {% endif %}
 
@@ -19,7 +19,7 @@
     <p class="author-location">
       <i class="fas fa-map-marker-alt"></i>
       <span class="lang-en">{{ site.author.location }}</span>
-      <span class="lang-zh" style="display:none;">{{ site.author.location_zh | default: site.author.location }}</span>
+      <span class="lang-zh">{{ site.author.location_zh | default: site.author.location }}</span>
     </p>
     {% endif %}
 

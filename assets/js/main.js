@@ -16,31 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
 
-    // Toggle all language-specific content
-    document.querySelectorAll('.lang-en').forEach(el => {
-      el.style.display = lang === 'en' ? '' : 'none';
-    });
-    document.querySelectorAll('.lang-zh').forEach(el => {
-      el.style.display = lang === 'zh' ? '' : 'none';
-    });
+    // Set language attribute on html element - CSS will handle visibility
+    document.documentElement.setAttribute('data-lang', lang);
 
-    // Handle blog post items specifically
-    document.querySelectorAll('.post-item.lang-en').forEach(el => {
-      el.style.display = lang === 'en' ? '' : 'none';
-    });
-    document.querySelectorAll('.post-item.lang-zh').forEach(el => {
-      el.style.display = lang === 'zh' ? '' : 'none';
-    });
-
-    // Handle no-posts placeholders
-    document.querySelectorAll('.no-posts.lang-en').forEach(el => {
-      el.style.display = lang === 'en' ? '' : 'none';
-    });
-    document.querySelectorAll('.no-posts.lang-zh').forEach(el => {
-      el.style.display = lang === 'zh' ? '' : 'none';
-    });
-
-    // Handle blog post lists with translations
+    // Handle blog post lists with translations (for placeholder logic)
     document.querySelectorAll('.post-list').forEach(list => {
       const enPosts = list.querySelectorAll('.post-item.lang-en');
       const zhPosts = list.querySelectorAll('.post-item.lang-zh');
@@ -87,9 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Show "coming soon" if category is empty for selected language
       const visiblePosts = lang === 'en' ? enPosts : zhPosts;
       const placeholders = list.querySelectorAll('.no-translation');
-      const staticEmpty = list.querySelectorAll(`.no-posts.lang-${lang}`);
 
-      if (visiblePosts.length === 0 && placeholders.length === 0 && staticEmpty.length === 0) {
+      if (visiblePosts.length === 0 && placeholders.length === 0) {
         const emptyMsg = document.createElement('div');
         emptyMsg.className = 'no-posts no-translation';
         emptyMsg.textContent = lang === 'en' ? 'Coming soon...' : '敬请期待...';

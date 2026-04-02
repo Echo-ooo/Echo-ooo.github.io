@@ -7,9 +7,9 @@ permalink: /algorithm/
 <div class="algorithm-index">
   <div class="page-header">
     <h1 class="lang-en">Algorithm Notes</h1>
-    <h1 class="lang-zh" style="display: none;">算法笔记</h1>
+    <h1 class="lang-zh">算法笔记</h1>
     <p class="lang-en">LeetCode problem solutions and algorithm analysis</p>
-    <p class="lang-zh" style="display: none;">力扣题解与算法分析</p>
+    <p class="lang-zh">力扣题解与算法分析</p>
   </div>
 
   <div class="algorithm-grid">
@@ -18,11 +18,11 @@ permalink: /algorithm/
       <div class="card-icon">{{ item.icon }}</div>
       <h3>
         <span class="lang-en">{{ item.title }}</span>
-        <span class="lang-zh" style="display: none;">{{ item.title_zh }}</span>
+        <span class="lang-zh">{{ item.title_zh }}</span>
       </h3>
       <p class="card-desc">
         <span class="lang-en">{{ item.excerpt }}</span>
-        <span class="lang-zh" style="display: none;">{{ item.excerpt_zh }}</span>
+        <span class="lang-zh">{{ item.excerpt_zh }}</span>
       </p>
       <div class="card-tags">
         {% for tag in item.tags %}
