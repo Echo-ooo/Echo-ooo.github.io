@@ -199,4 +199,80 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(el);
   });
 
+
+  // ============================================
+  // CODE TABS (Algorithm Pages)
+  // ============================================
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const tabId = this.dataset.tab;
+      const container = this.closest('.code-tabs');
+
+      container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      this.classList.add('active');
+      const targetTab = container.querySelector('#' + tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+    });
+  });
+
+
+  // ============================================
+  // CODE COPY BUTTON
+  // ============================================
+  document.querySelectorAll('.code-block pre').forEach(pre => {
+    // Create copy button
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <span>Copy</span>
+    `;
+
+    // Make pre position relative for absolute positioning of button
+    pre.style.position = 'relative';
+    pre.appendChild(copyBtn);
+
+    // Copy functionality
+    copyBtn.addEventListener('click', async () => {
+      const code = pre.querySelector('code');
+      const text = code ? code.textContent : pre.textContent;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.classList.add('copied');
+        copyBtn.querySelector('span').textContent = 'Copied!';
+
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyBtn.querySelector('span').textContent = 'Copy';
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        copyBtn.classList.add('copied');
+        copyBtn.querySelector('span').textContent = 'Copied!';
+
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyBtn.querySelector('span').textContent = 'Copy';
+        }, 2000);
+      }
+    });
+  });
+
 });

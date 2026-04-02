@@ -13,6 +13,34 @@ layout: default
     {% if page.title %}
     <header class="page-header">
       <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.lang and page.slug %}
+      <div class="post-lang-switcher">
+        {% if page.lang == 'zh' %}
+          {% assign other_lang = 'en' %}
+          {% assign current_label = '中文' %}
+          {% assign other_label = 'English' %}
+        {% else %}
+          {% assign other_lang = 'zh' %}
+          {% assign current_label = 'English' %}
+          {% assign other_label = '中文' %}
+        {% endif %}
+
+        <span class="current-lang">{{ current_label }}</span>
+        <span class="lang-divider">|</span>
+
+        {% assign found_other = false %}
+        {% for post in site.posts %}
+          {% if post.slug == page.slug and post.lang == other_lang %}
+            {% assign found_other = true %}
+            <a href="{{ post.url | relative_url }}" class="other-lang">{{ other_label }}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% unless found_other %}
+          <span class="other-lang disabled" title="{% if other_lang == 'zh' %}中文版即将推出{% else %}English version coming soon{% endif %}">{{ other_label }}</span>
+        {% endunless %}
+      </div>
+      {% endif %}
     </header>
     {% endif %}
 
